@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using System.Data;
     using System.Data.Common;
-    using System.Data.SQLite;
+    using Microsoft.Data.Sqlite;
     using System.Linq;
     using System.Reflection;
     using System.Text;
@@ -92,7 +92,7 @@
                     cnn = new NpgsqlConnection(cnnStr);
                     break;
                 case DBMS.SQLite:
-                    cnn = new SQLiteConnection(cnnStr);
+                    cnn = new SqliteConnection(cnnStr);
                     break;
                 case DBMS.SQLServer:
                     cnn = new SqlConnection(cnnStr) { AccessToken = options.SqlServerAccessToken };

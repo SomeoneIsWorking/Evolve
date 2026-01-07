@@ -3,6 +3,7 @@
 using Configuration;
 using Dialect;
 using McMaster.Extensions.CommandLineUtils;
+using Microsoft.Data.Sqlite;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -11,7 +12,7 @@ using AllowedValuesAttribute = McMaster.Extensions.CommandLineUtils.AllowedValue
 [Command(ResponseFileHandling = ResponseFileHandling.ParseArgsAsSpaceSeparated)]
 class Program
 {
-    private static readonly Evolve Default = new(new System.Data.SQLite.SQLiteConnection("Data Source=:memory:"));
+    private static readonly Evolve Default = new(new SqliteConnection("Data Source=:memory:"));
 
     static int Main(string[] args)
     {
